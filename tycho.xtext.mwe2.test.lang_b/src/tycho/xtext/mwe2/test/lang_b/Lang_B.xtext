@@ -1,0 +1,14 @@
+grammar tycho.xtext.mwe2.test.lang_b.Lang_B with org.eclipse.xtext.common.Terminals
+
+
+import "http://tycho.xtext.mwe2.test/Lang_A" as lang_a
+
+generate lang_b "http://tycho.xtext.mwe2.test/Lang_B"
+
+Model_B:
+	tables += Table
+;
+
+Table:
+	name=ID ":" entity=[lang_a::Entity]
+;

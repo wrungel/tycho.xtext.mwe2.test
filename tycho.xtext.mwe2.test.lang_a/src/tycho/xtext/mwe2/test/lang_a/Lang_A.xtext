@@ -1,0 +1,12 @@
+grammar tycho.xtext.mwe2.test.lang_a.Lang_A with org.eclipse.xtext.common.Terminals
+
+
+generate lang_a "http://tycho.xtext.mwe2.test/Lang_A"
+
+ModelA:
+	entities+=Entity
+;
+
+Entity: 
+	"entity" name=ID
+;

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <groupId>tycho.xtext.mwe2.test</groupId>
+        <artifactId>parent</artifactId>
+        <version>12.1.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>tycho.xtext.mwe2.test.lang_b</artifactId>
+    <packaging>eclipse-plugin</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>${basedir}/src-gen</directory>
+                        </fileset>
+                        <fileset>
+                            <directory>${basedir}/xtend-gen</directory>
+                        </fileset>
+                        <!-- clean ui plugin as well -->
+                        <fileset>
+                            <directory>${basedir}/../${project.artifactId}.ui/src-gen</directory>
+                        </fileset>
+                        <fileset>
+                            <directory>${basedir}/../${project.artifactId}.ui/xtend-gen</directory>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <includeProjectDependencies>false</includeProjectDependencies>
+                    <includePluginDependencies>true</includePluginDependencies>
+                    <mainClass>org.eclipse.emf.mwe2.launch.runtime.Mwe2Launcher</mainClass>
+                    <arguments>
+                        <argument>file://${project.basedir}/src/tycho/xtext/mwe2/test/lang_b/GenerateLang_B.mwe2</argument>
+                        <argument>
+                            -p
+                        </argument>
+                        <argument>
+                            runtimeProject=/${project.basedir}
+                        </argument>
+                    </arguments>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.eclipse.xtext</groupId>
+                        <artifactId>org.eclipse.xtext.xtext</artifactId>
+                        <version>2.5.0</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.eclipse.xtext</groupId>
+                        <artifactId>org.eclipse.xtext.xbase</artifactId>
+                        <version>2.5.0</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.eclipse.xtend</groupId>
+                <artifactId>xtend-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

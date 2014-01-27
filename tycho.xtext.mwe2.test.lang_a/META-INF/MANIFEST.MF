@@ -1,0 +1,35 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: tycho.xtext.mwe2.test.lang_a
+Bundle-Vendor: XXX AG
+Bundle-Version: 12.1.1.qualifier
+Bundle-SymbolicName: tycho.xtext.mwe2.test.lang_a;singleton:=true
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.eclipse.xtext;visibility:=reexport,
+ org.eclipse.xtext.xbase;resolution:=optional;visibility:=reexport,
+ org.eclipse.xtext.generator;resolution:=optional,
+ org.apache.commons.logging;bundle-version="1.0.4";resolution:=optional,
+ org.eclipse.emf.codegen.ecore;resolution:=optional,
+ org.eclipse.emf.mwe.utils;resolution:=optional,
+ org.eclipse.emf.mwe2.launch;resolution:=optional,
+ org.eclipse.xtext.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types,
+ org.eclipse.xtext.xbase.lib
+Import-Package: org.apache.log4j,
+ org.eclipse.xtext.xbase.lib
+Export-Package: tycho.xtext.mwe2.test.lang_a,
+ tycho.xtext.mwe2.test.lang_a.formatting,
+ tycho.xtext.mwe2.test.lang_a.parser.antlr,
+ tycho.xtext.mwe2.test.lang_a.parser.antlr.internal,
+ tycho.xtext.mwe2.test.lang_a.scoping,
+ tycho.xtext.mwe2.test.lang_a.serializer,
+ tycho.xtext.mwe2.test.lang_a.services,
+ tycho.xtext.mwe2.test.lang_a.validation,
+ tycho.xtext.mwe2.test.lang_a.lang_a,
+ tycho.xtext.mwe2.test.lang_a.lang_a.impl,
+ tycho.xtext.mwe2.test.lang_a.lang_a.util
+
