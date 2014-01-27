@@ -1,7 +1,7 @@
 tycho.xtext.mwe2.test
 =====================
 
-Shows a problem with maven-xtext-plugin and access to external language
+Shows a problem with exec-maven-plugin, tycho and access to external language in mwe2 workflow file.
 
 
 Steps:
