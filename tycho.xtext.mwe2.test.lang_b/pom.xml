@@ -14,20 +14,26 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-clean-plugin</artifactId>
-                <configuration>
+                 <configuration>
                     <filesets>
                         <fileset>
-                            <directory>${basedir}/src-gen</directory>
+                            <directory>${basedir}/model/generated</directory>
+                            <includes>
+                                <include>*</include>
+                            </includes>                            
                         </fileset>
                         <fileset>
-                            <directory>${basedir}/xtend-gen</directory>
+                            <directory>${basedir}/src-gen</directory>
+                            <includes>
+                                <include>*</include>
+                            </includes>                                                        
                         </fileset>
                         <!-- clean ui plugin as well -->
                         <fileset>
                             <directory>${basedir}/../${project.artifactId}.ui/src-gen</directory>
-                        </fileset>
-                        <fileset>
-                            <directory>${basedir}/../${project.artifactId}.ui/xtend-gen</directory>
+                            <includes>
+                                <include>*</include>
+                            </includes>                                                        
                         </fileset>
                     </filesets>
                 </configuration>

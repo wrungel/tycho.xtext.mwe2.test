@@ -3,8 +3,10 @@
  */
 package tycho.xtext.mwe2.test.lang_b.formatting;
 
+import com.google.inject.Inject;
 import org.eclipse.xtext.formatting.impl.AbstractDeclarativeFormatter;
 import org.eclipse.xtext.formatting.impl.FormattingConfig;
+import tycho.xtext.mwe2.test.lang_b.services.Lang_BGrammarAccess;
 
 /**
  * This class contains custom formatting description.
@@ -15,6 +17,9 @@ import org.eclipse.xtext.formatting.impl.FormattingConfig;
  * Also see {@link org.eclipse.xtext.xtext.XtextFormattingTokenSerializer} as an example
  */
 public class Lang_BFormatter extends AbstractDeclarativeFormatter {
+	
+	@Inject
+	private Lang_BGrammarAccess grammarAccess; 
 	
 	@Override
 	protected void configureFormatting(FormattingConfig c) {
